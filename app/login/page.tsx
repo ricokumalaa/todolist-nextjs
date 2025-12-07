@@ -11,12 +11,12 @@ export default function Login ({title, showLogo}: LoginProps) {
     
     const setTrue = () => {
         setUsername(true);
-        console.log("INI JADI BENER");
+        console.log("INI JADI TRUE");
     }
 
     const setFalse = () => {
         setUsername(false);
-        console.log("INI JADI SALAH");
+        console.log("INI JADI FALSE");
     }
 
     const [username, setUsername] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export default function Login ({title, showLogo}: LoginProps) {
         <>
             <h5>TESTING</h5> 
             <br />
-            {username ? <button onClick={setFalse}> SALAH </button> : <button onClick={setTrue}> BENER </button>}
+            {username ? <button onClick={setFalse}> FALSE </button> : <button onClick={setTrue}> TRUE </button>}
             
         </>
     );
