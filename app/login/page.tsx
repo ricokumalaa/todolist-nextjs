@@ -1,32 +1,23 @@
-'use client'
-
-import { useState } from "react";
-
-interface LoginProps {
-  title: string;
-  showLogo?: boolean; // optional
-}
-
-export default function Login ({title, showLogo}: LoginProps) {
-    
-    const setTrue = () => {
-        setUsername(true);
-        console.log("INI JADI TRUE");
-    }
-
-    const setFalse = () => {
-        setUsername(false);
-        console.log("INI JADI FALSE");
-    }
-
-    const [username, setUsername] = useState<boolean>(false);
-
+export default function Login() {
     return (
-        <>
-            <h5>TESTING</h5> 
-            <br />
-            {username ? <button onClick={setFalse}> FALSE </button> : <button onClick={setTrue}> TRUE </button>}
-            
-        </>
+        <div className="justify-items-center h-screen w-screen">
+            <div className="h-30 w-full p-7 content-center">
+                <p className="text-2xl font-bold text-black">
+                    todoList
+                </p>
+            </div>
+            <div className="w-100 justify-stretch text-black">
+                <p className="text-2xl font-bold text-center">
+                    todoList 
+                </p>
+                <p className="text-center text-m">
+                    A board to help your daily needs
+                </p>
+                <div className="py-4">
+                    <label htmlFor="username">Username</label><br />
+                    <input type="text" name="username" placeholder="Enter your username" />
+                </div>
+            </div>
+        </div>
     );
 }
