@@ -1,25 +1,5 @@
-name: Sync UAT to Dev Branch
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "*/10 * * * *"
-
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout DEV repo
-        uses: actions/checkout@v4
-
-      - name: Add UAT remote
-        run: |
-          git remote add uat https://x-access-token:${{ secrets.UAT_TOKEN }}@github.com/ricokumalaa/commodity-landing-page.git
-          git fetch uat
-
-      - name: Mirror UAT main
-        run: |
-          git checkout -B mini-uat
-          git reset --hard uat/main
-          git push origin mini-uat --force
+- name: Add UAT remote
+  run: |
+    git remote add uat https://x-access-token:${{ secrets.UAT_TOKEN }}@github.com/ricokumalaa/commodity-landing-page.git
+    git fetch uat
+    git branch -r
