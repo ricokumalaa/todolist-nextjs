@@ -2,8 +2,13 @@ name: Sync UAT to Dev Branch
 
 on:
   workflow_dispatch:
+    inputs:
+      release-branch:
+        description: "masukin branch tolol"
+        required: true
+        default: "main"
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/40 * * * *"
 
 jobs:
   sync:
@@ -15,6 +20,7 @@ jobs:
 
       - name: Add UAT remote
         run: |
+          echo ${{ github.event.inputs.release-branch}}
           git remote add uat https://x-access-token:${{ secrets.UAT_TOKEN }}@github.com/ricokumalaa/commodity-landing-page.git
           git fetch uat
 
