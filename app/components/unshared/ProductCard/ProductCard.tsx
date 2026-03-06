@@ -10,18 +10,21 @@ interface ProductProps {
 
 const ProductCard = ({ text, imageName, alt="", extraClass="" }:ProductProps) => {
     return(
-        <div className="flex flex-col items-center gap-y-10">
+        <div className="flex flex-col items-center gap-y-10 row-span-2">
             <Image
                 src={`/images/${imageName}`}
                 alt={alt}
-                width={200}
-                height={200}
+                width={350}
+                height={350}
                 className="rounded-2xl shadow-md"
             />
-            <MainText
-                text={text}
-                extraClass="text-sm lg:text-lg w-50"
-            />
+            { 
+                text && 
+                <MainText
+                    text={text}
+                    extraClass="text-sm lg:text-lg w-50"
+                />
+            }
         </div>
     );
 }
