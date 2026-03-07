@@ -10,7 +10,7 @@ interface ProductProps {
 
 const ProductCard = ({ text, imageName, alt="", extraClass="" }:ProductProps) => {
     return(
-        <div className="flex flex-col items-center gap-y-10 row-span-2">
+        <div className="flex flex-col justify-center items-center gap-y-10 row-span-2">
             <Image
                 src={`/images/${imageName}`}
                 alt={alt}

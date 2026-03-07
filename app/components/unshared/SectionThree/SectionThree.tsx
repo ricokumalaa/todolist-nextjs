@@ -12,7 +12,7 @@ const SectionThree = () => {
                 extraClass="text-xl md:text-3xl"
             />
 
-            <div className="w-full mx-auto grid grid-flow-col md:grid-rows-2 gap-y-10">
+            <div className="w-full mx-auto grid md:grid-flow-col md:grid-rows-2 gap-y-10">
                 <ProductCard
                     text=""
                     imageName="kemiri-pinterest.jpg"
